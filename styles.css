@@ -1,12 +1,15 @@
 :root {
     font-size: 24px;
-    font-family: 'Roboto', sans-serif;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.hidden {
+    display: none;
 }
 
 .main {
@@ -29,4 +32,26 @@
 
 .title {
     color: white;
+}
+
+#startMenu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    gap: 20px;
+}
+
+#startMenu h6 {
+    font-size: 1rem;
+}
+
+.top {
+    flex-direction: column;
+}
+
+#startGameBtn {
+    font-size: 2rem;
 }
