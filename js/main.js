@@ -8,7 +8,6 @@ const startGameBtn = document.getElementById('startGameBtn');
     changeGameState(GAME_STATE.CHOOSE_PLAYER);
 });
 
-
 // Define your game states
 const GAME_STATE = {
     START_MENU: 'start_menu',
@@ -35,14 +34,12 @@ function changeGameState(newState) {
 
 // Function to update the game based on the current state
 function updateGame() {
-    console.log(currentState);
     switch (currentState) {
-        case GAME_STATE.START_MENU:
-
+        case GAME_STATE.START_MENU: 
+            startMenuWindow.classList.remove('hidden');
             break;
         case GAME_STATE.CHOOSE_PLAYER:
             choosePlayersWindow.classList.remove('hidden');
-
             break;
         case GAME_STATE.GAME_WINDOW:
             
@@ -51,3 +48,13 @@ function updateGame() {
             console.error('Invalid game state');
     }
 }
+
+  // Call the updateGame function in your game loop or event loop
+  function gameLoop() {
+    updateGame();
+    // Add any necessary animations or rendering here
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Start the game loop
+  gameLoop();

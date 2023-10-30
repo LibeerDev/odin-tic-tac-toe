@@ -31,6 +31,16 @@
 
 }
 
+#choosePlayersWindow {
+    color: white;
+    display: flex;
+    padding: 4rem;
+    justify-content: space-between;
+    h1 {
+        font-size: 3rem;
+    }
+}
+
 #startMenuWindow {
     height: 100%;
     display: flex;
