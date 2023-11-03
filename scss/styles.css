@@ -1,5 +1,6 @@
 :root {
   font-size: 24px;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -8,7 +9,34 @@
   padding: 0;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main {
   background-color: black;
-  height: 100vh;
+  height: 100dvh;
 }
+.main .game-window {
+  width: 90dvh;
+  height: 90dvh;
+  /*         border: 2px solid white; */
+}
+.main .game-window #ticTacGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+  height: 100%;
+}
+.main .game-window #ticTacGrid .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(225, 75%, 52%);
+  border: 3px solid rgb(255, 255, 255);
+  padding: 50px;
+  font-size: 5rem;
+}/*# sourceMappingURL=styles.css.map */
