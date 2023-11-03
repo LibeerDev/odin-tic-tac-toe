@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="scss/cssreset.css">
@@ -8,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <main class="main center">
-        <div class="game" id="gameWindow">
+        <div class="game">
             <div id="startMenuWindow" class="hidden">
                 <div class="top center">
                     <h1>Tic Tac Toe</h1>
@@ -22,21 +24,24 @@
                     </button>
                 </div>
             </div>
-                <div id="choosePlayersWindow" class="hidden">
-                    <div>
-                        <h1>Player 1</h1>
-                    </div>
-                    <div>
-                        <h1>Player 2</h1>
-                    </div>
-
+            <div id="choosePlayersWindow" class="hidden">
+                <div class="left">
+                    <h1>Player 1</h1>
+                    <div class="white"></div>
                 </div>
-                <div id="gameWindow" class="hidden">
 
+                <div class="right">
+                    <h1>Player 2</h1>
+                    <div class="white"></div>
                 </div>
+            </div>
+            <div id="gameWindow" class="hidden">
+
+            </div>
         </div>
     </main>
 </body>
 <script src="js/main.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 </html>

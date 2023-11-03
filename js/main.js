@@ -12,7 +12,7 @@ const startGameBtn = document.getElementById('startGameBtn');
 const GAME_STATE = {
     START_MENU: 'start_menu',
     CHOOSE_PLAYER: 'choose_player',
-    GAME_WINDOW: 'game_window',
+    GAME_WINDOW:     'game_window',
 };
 
 let currentState = GAME_STATE.START_MENU;
