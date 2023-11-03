@@ -8,3 +8,5 @@ const menuStates = {
     choosePlayersMenu: 'choosePlayersMenu',
     playMenu: 'playMenu',
 }
+
+export { gameState }

@@ -2,6 +2,4 @@
 
 const gameBoard = ['','','','','','','','',''];
 
-export function getGameBoard() {
-    return gameBoard;
-}
+export { gameBoard }

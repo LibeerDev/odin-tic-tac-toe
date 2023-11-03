@@ -37,6 +37,6 @@
   justify-content: center;
   color: hsl(225, 75%, 52%);
   border: 3px solid rgb(255, 255, 255);
-  padding: 50px;
-  font-size: 5rem;
+  font-size: 4rem;
+  border-radius: 10%;
 }/*# sourceMappingURL=styles.css.map */

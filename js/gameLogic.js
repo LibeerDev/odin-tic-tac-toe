@@ -1,16 +1,20 @@
 // gameLogic.js
 
 import { renderBoard } from './rendering.js';
-import { getGameBoard } from './gameBoard.js';
+import { gameBoard } from './gameBoard.js';
 import { gameState } from './stateManager.js';
 
 
-function placeMark(index, currentPlayer) {
-    gameBoard = getGameBoard();
+function placeMark(index) {
+    const { currentPlayer } = gameState;
+    console.log(currentPlayer);
+    gameBoard[index] = currentPlayer;
+    console.log(gameBoard[index]);
+    display();
 }
 
-function gameLoop() {
-    renderBoard(getGameBoard());
+function display() {
+    renderBoard(gameBoard);
 }
 
-export { gameLoop };
+export { placeMark, display };
