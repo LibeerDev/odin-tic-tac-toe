@@ -1,15 +1,13 @@
 // main.js
-import { placeMark, display } from './gameLogic.js';
-import { gameState } from './stateManager.js';
-import { gameBoard } from './gameBoard.js';
- 
-function addListenersToCells() {
+import { placeMark, createGrid } from './gameLogic.js';
+
+function addEventListenersToCells() {
     const allCells = document.querySelectorAll('.cell');
-    
+
     allCells.forEach((cell, index) => {
         cell.addEventListener('click', () => { placeMark(index) });
     });
 }
 
-display();
-addListenersToCells();
+createGrid();
+addEventListenersToCells();

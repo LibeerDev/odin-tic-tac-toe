@@ -9,12 +9,12 @@ function placeMark(index) {
     const { currentPlayer } = gameState;
     console.log(currentPlayer);
     gameBoard[index] = currentPlayer;
-    console.log(gameBoard[index]);
-    display();
+
+    createGrid();
 }
 
-function display() {
+function createGrid() {
     renderBoard(gameBoard);
 }
 
-export { placeMark, display };
+export { placeMark, createGrid };

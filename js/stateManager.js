@@ -9,4 +9,4 @@ const menuStates = {
     playMenu: 'playMenu',
 }
 
-export { gameState }
+export { gameState };
