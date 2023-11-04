@@ -2,4 +2,4 @@
 
 const gameBoard = ['','','','','','','','',''];
 
-export { gameBoard }
+export { gameBoard };

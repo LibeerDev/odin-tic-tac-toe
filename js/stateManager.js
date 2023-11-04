@@ -1,9 +1,9 @@
-const gameState = {
+let gameState = {
     currentWindow: 'startMenu',
     currentPlayer: 'X',
 };
 
-const menuStates = {
+let menuStates = {
     startMenu: 'startMenu',
     choosePlayersMenu: 'choosePlayersMenu',
     playMenu: 'playMenu',
