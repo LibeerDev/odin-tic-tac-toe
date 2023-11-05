@@ -14,9 +14,8 @@ function placeMark(index) {
     }
 
     switchPlayers();
-    checkWin();
     createGrid();
-    console.log(gameBoard);
+    checkWin();
 }
 
 function switchPlayers() {
@@ -29,25 +28,43 @@ function switchPlayers() {
 }
 
 function checkWin() {
-    gameBoard.forEach((index) => {
-        console.log(gameBoard[index]);
-        if( gameBoard[index + 1] === gameBoard.currentPlayer && gameBoard[index - 1] === gameBoard.currentPlayer ) {
-            announceWinner(gameBoard.currentPlayer);
+    // Define the winning combinations (rows, columns, and diagonals)
+    const winCombinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+        [0, 4, 8], [2, 4, 6]             // Diagonals
+    ];
+
+    // Iterate through the winning combinations
+    for (const combination of winCombinations) {
+        const [a, b, c] = combination;
+
+        if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+            announceWinner(gameBoard[a]);
+            return;
         }
-        if( gameBoard[index + 4] === gameBoard.currentPlayer && gameBoard[index - 4] === gameBoard.currentPlayer ) {
-            announceWinner(gameBoard.currentPlayer);
-        }
-    });
+    }
+
+    // Check for a draw (if the board is full and no one has won)
+    if (!gameBoard.includes('')) {
+        announceDraw();
+    }
 }
 
 function announceWinner(winner) {
+    console.log('announce winner function runs');
+    const winnerScreen = document.getElementById('winnerScreen');
+    const winnerText = document.getElementById('winnerText');
+
+    winnerScreen.classList.toggle('hidden');
+
     if (winner === 'X')
     {
-        alert('Player 1 has won the game!');
+        winnerText.innerHTML = "Player 1 has won";
     }
     else if (winner === 'O')
     {
-        alert('Player 2 has won the game!');
+        winnerText.innerHTML = "Player 2 has won";
     }
 }
 
