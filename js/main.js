@@ -47,24 +47,27 @@ function checkWin() {
 
     // Check for a draw (if the board is full and no one has won)
     if (!gameBoard.includes('')) {
-        announceDraw();
+        announceWinner('draw');
     }
 }
 
 function announceWinner(winner) {
-    console.log('announce winner function runs');
     const winnerScreen = document.getElementById('winnerScreen');
     const winnerText = document.getElementById('winnerText');
 
     winnerScreen.classList.toggle('hidden');
 
-    if (winner === 'X')
+    if (winner === 'draw')
     {
-        winnerText.innerHTML = "Player 1 has won";
+        winnerText.innerHTML = "It's a draw, no one has won.";
+    }
+    else if (winner === 'X')
+    {
+        winnerText.innerHTML = "Player 1 has won.";
     }
     else if (winner === 'O')
     {
-        winnerText.innerHTML = "Player 2 has won";
+        winnerText.innerHTML = "Player 2 has won.";
     }
 }
 
