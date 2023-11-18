@@ -18,7 +18,11 @@ $blur-color: hsl(225, 75%, 52%);
 }
 
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+img {
+    height: 50vh;
 }
 
 .main {
@@ -38,8 +42,6 @@ $blur-color: hsl(225, 75%, 52%);
     }
 
     .game-window {
-        width: 90dvh;
-        height: 90dvh;
 /*         border: 2px solid white; */
 
         #ticTacGrid {
@@ -59,6 +61,22 @@ $blur-color: hsl(225, 75%, 52%);
                 border-radius: 10%;
             }
         }
+
+        .choose-players {
+            display: flex;
+
+            .player1, .player2 {
+                text-align: center;
+            }
+
+            #showGameBtn {
+                height: 100px;
+                position: relative;
+                width: 200px;
+                top: 70%;
+                right: 50%;
+            }
+          }
+        
     }
 }
-

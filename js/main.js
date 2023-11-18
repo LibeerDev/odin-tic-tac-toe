@@ -4,9 +4,23 @@ import { renderBoard } from './rendering.js';
 import { gameBoard } from './gameBoard.js';
 import { gameState } from './stateManager.js';
 
+
+const choosePlayersMenu = document.getElementById('choosePlayersMenu');
+const ticTacGrid = document.getElementById('ticTacGrid');
+
+
+const startGameBtn = document.getElementById('playGameBtn');
+startGameBtn.addEventListener('click', function() {
+    
+    hideStates();
+    choosePlayersMenu.classList.remove('hidden');
+
+    });
+    
 function createGrid() {
     renderBoard(gameBoard);
 }
+
 
 function placeMark(index) {
     if (gameBoard[index] === '') {
@@ -40,7 +54,7 @@ function checkWin() {
         const [a, b, c] = combination;
 
         if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-            announceWinner(gameBoard[a]);
+            announceWinner(gameBoard[a], combination);
             return;
         }
     }
@@ -51,7 +65,17 @@ function checkWin() {
     }
 }
 
-function announceWinner(winner) {
+function hideStates() {
+    const allStates = document.querySelectorAll('.game-state');
+    allStates.forEach((state) => {
+        state.classList.add('hidden');
+    })
+
+    console.log(allStates);
+};
+
+
+function announceWinner(winner, winningCombination) {
     const winnerScreen = document.getElementById('winnerScreen');
     const winnerText = document.getElementById('winnerText');
 
@@ -64,13 +88,23 @@ function announceWinner(winner) {
     else if (winner === 'X')
     {
         winnerText.innerHTML = "Player 1 has won.";
+        highlightCells(winningCombination);
     }
     else if (winner === 'O')
     {
         winnerText.innerHTML = "Player 2 has won.";
+        highlightCells(winningCombination);
+    }
+
+    function highlightCells(winningCombination) {
+        const cells = document.querySelectorAll('.cell');
+    
+        cells.forEach((cell, index) => {
+            if (winningCombination.includes(index)) {
+                cell.style.border = "20px solid red";
+            }
+        });
     }
 }
 
 export { placeMark, createGrid };
-
-createGrid();

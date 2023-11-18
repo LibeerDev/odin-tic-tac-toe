@@ -16,7 +16,11 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+img {
+  height: 50vh;
 }
 
 .main {
@@ -35,8 +39,6 @@
   color: white;
 }
 .main .game-window {
-  width: 90dvh;
-  height: 90dvh;
   /*         border: 2px solid white; */
 }
 .main .game-window #ticTacGrid {
@@ -54,4 +56,17 @@
   border: 3px solid rgb(255, 255, 255);
   font-size: 4rem;
   border-radius: 10%;
+}
+.main .game-window .choose-players {
+  display: flex;
+}
+.main .game-window .choose-players .player1, .main .game-window .choose-players .player2 {
+  text-align: center;
+}
+.main .game-window .choose-players #showGameBtn {
+  height: 100px;
+  position: relative;
+  width: 200px;
+  top: 70%;
+  right: 50%;
 }/*# sourceMappingURL=styles.css.map */
