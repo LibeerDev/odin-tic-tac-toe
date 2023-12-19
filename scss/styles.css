@@ -61,7 +61,6 @@ img {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
-  height: 100%;
 }
 .main .game-window #ticTacGrid .cell {
   display: flex;
@@ -71,8 +70,9 @@ img {
   border: 3px solid rgb(255, 255, 255);
   font-size: 4rem;
   border-radius: 10%;
-  width: 150px;
-  height: 150px;
+  width: 10vh;
+  height: 10vh;
+  flex: 1;
 }
 .main .game-window .choose-players {
   display: flex;
