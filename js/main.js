@@ -7,9 +7,12 @@ import { gameState } from './stateManager.js';
 
 const choosePlayersMenu = document.getElementById('choosePlayersMenu');
 const ticTacGrid = document.getElementById('ticTacGrid');
+const showGameBtn = document.getElementById('showGameBtn');
 
+showGameBtn.addEventListener('click', () => toGame());
 
 const startGameBtn = document.getElementById('playGameBtn');
+
 startGameBtn.addEventListener('click', function() {
     
     hideStates();
@@ -30,6 +33,11 @@ function placeMark(index) {
     switchPlayers();
     createGrid();
     checkWin();
+}
+
+function toGame() {
+    hideStates();
+    ticTacGrid.classList.remove('hidden');
 }
 
 function switchPlayers() {
@@ -106,5 +114,9 @@ function announceWinner(winner, winningCombination) {
         });
     }
 }
+
+// game setup
+
+createGrid();
 
 export { placeMark, createGrid };

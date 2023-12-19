@@ -56,9 +56,12 @@ img {
   border: 3px solid rgb(255, 255, 255);
   font-size: 4rem;
   border-radius: 10%;
+  width: 150px;
+  height: 150px;
 }
 .main .game-window .choose-players {
   display: flex;
+  transform: scale(50%);
 }
 .main .game-window .choose-players .player1, .main .game-window .choose-players .player2 {
   text-align: center;

@@ -59,11 +59,15 @@ img {
                 border: 3px solid rgb(255, 255, 255);
                 font-size: 4rem;
                 border-radius: 10%;
+                width: 150px;
+                height: 150px;
             }
         }
 
         .choose-players {
             display: flex;
+            
+            transform: scale(50%);
 
             .player1, .player2 {
                 text-align: center;
