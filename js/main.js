@@ -13,13 +13,12 @@ showGameBtn.addEventListener('click', () => toGame());
 
 const startGameBtn = document.getElementById('playGameBtn');
 
-startGameBtn.addEventListener('click', function() {
+startGameBtn.addEventListener('click', () => toGame());
     
-    hideStates();
-    choosePlayersMenu.classList.remove('hidden');
+document.getElementById('resetGame').addEventListener('click', function() {
+    location.reload(); // This reloads the current page
+  });
 
-    });
-    
 function createGrid() {
     renderBoard(gameBoard);
 }
@@ -95,12 +94,12 @@ function announceWinner(winner, winningCombination) {
     }
     else if (winner === 'X')
     {
-        winnerText.innerHTML = "Player 1 has won.";
+        winnerText.innerHTML = "Player X has won.";
         highlightCells(winningCombination);
     }
     else if (winner === 'O')
     {
-        winnerText.innerHTML = "Player 2 has won.";
+        winnerText.innerHTML = "Player O has won.";
         highlightCells(winningCombination);
     }
 
