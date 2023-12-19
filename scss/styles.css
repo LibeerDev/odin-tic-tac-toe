@@ -40,7 +40,7 @@ img {
   flex-direction: column;
 }
 .main #winnerScreen #resetGame {
-  background-color: rgba(164, 255, 61, 0.5411764706); /* Green */
+  background-color: #67ddc9; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
